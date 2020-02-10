@@ -7,7 +7,6 @@ IMAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_IMAGE
 PROJECT=$BUILDKITE_PLUGIN_RUN_DOCKER_PROJECT
 echo "--- Running ${CMD} for ${PROJECT} in ${IMAGE}"
 
-cd web-code-source
 IMAGE=$IMAGE docker-compose \
   -f projects/monorepo-tools/scripts/docker/docker-compose.yml \
   run web-code-run bash -c "$CMD"
