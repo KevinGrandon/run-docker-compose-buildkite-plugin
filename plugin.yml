@@ -1,4 +1,4 @@
-name: Containerized Docker
+name: Run Docker
 description: Skips git checkout, extract source code from docker build image, and run command
 author: Web Platform Infrastructure
 requirements:
@@ -8,8 +8,8 @@ configuration:
   properties:
     image:
       type: string
-    package:
+    PROJECT:
       type: string
   required:
     - image
-    - package
+    - PROJECT

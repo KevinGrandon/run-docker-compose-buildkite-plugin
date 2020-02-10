@@ -3,13 +3,13 @@
 env
 
 CMD=$BUILDKITE_COMMAND
-IMAGE=$BUILDKITE_PLUGIN_CONTAINERIZED_DOCKER_IMAGE
-PACKAGE=$BUILDKITE_PLUGIN_CONTAINERIZED_DOCKER_PACKAGE
-echo "--- Running ${CMD} for ${PACKAGE} in ${IMAGE}"
+IMAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_IMAGE
+PROJECT=$BUILDKITE_PLUGIN_RUN_DOCKER_PROJECT
+echo "--- Running ${CMD} for ${PROJECT} in ${IMAGE}"
 
 mkdir -p web-code-source && chmod a+w web-code-source
 
-# pull out ci code and $PACKAGE code from the docker build image, and store in local /web-code-source folder
+# pull out ci code and $PROJECT code from the docker build image, and store in local /web-code-source folder
 docker run \
   -v ${PWD}/web-code-source:/web-code-source \
   -i \
@@ -18,10 +18,10 @@ docker run \
   $IMAGE bash <<CMD
 rm -rf /web-code-source/*
 cp -rf /web-code/ci /web-code-source
-mkdir -p /web-code-source/$(dirname $PACKAGE)
+mkdir -p /web-code-source/$(dirname $PROJECT)
 mkdir -p /web-code-source/projects
 cp -rf /web-code/projects/monorepo-tools /web-code-source/projects
-cp -rf /web-code/$PACKAGE /web-code-source/$PACKAGE
+cp -rf /web-code/$PROJECT /web-code-source/$PROJECT
 echo Changing owner of /web-code-source from \$(id -u):\$(id -g) to $(id -u):$(id -g)
 chown -R $(id -u):$(id -g) /web-code-source
 echo "chown DONE"
