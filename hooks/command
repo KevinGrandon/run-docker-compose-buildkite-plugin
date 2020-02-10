@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "--- Running ${BUILDKITE_COMMAND} in ${BUILDKITE_PLUGIN_CONTAINERIZED_DOCKER}"
+echo "extract folders:" "${BUILDKITE_PLUGIN_CONTAINERIZED_EXTRACT[@]}"
+
+eval ${BUILDKITE_COMMAND}

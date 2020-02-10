@@ -1,0 +1,15 @@
+name: Containerized Docker
+description: Skips git checkout, extract source code from docker build image, and run command
+author: Web Platform Infrastructure
+requirements:
+  - docker
+  - docker-compose
+configuration:
+  properties:
+    image:
+      type: string
+    extract:
+      type: array
+  required:
+    - image
+    - extract
