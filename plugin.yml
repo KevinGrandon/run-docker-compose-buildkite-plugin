@@ -8,8 +8,8 @@ configuration:
   properties:
     image:
       type: string
-    extract:
-      type: array
+    package:
+      type: string
   required:
     - image
-    - extract
+    - package
