@@ -1,3 +1,5 @@
+Bootstraps a web-code docker-compose run from a docker build image. Overrides the checkout hook to avoid hitting git.
+
 # usage
 
 ```
