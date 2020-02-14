@@ -6,10 +6,16 @@ requirements:
   - docker-compose
 configuration:
   properties:
+    compose-file:
+      type: string
     image:
       type: string
-    PROJECT:
+    package:
+      type: string
+    service:
       type: string
   required:
     - image
-    - PROJECT
+    - package
+    - service
+    - compose-file

@@ -3,8 +3,10 @@
 set -ex
 
 CMD=$BUILDKITE_COMMAND
-IMAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_IMAGE
-export PACKAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_PROJECT
+IMAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_IMAGE
+COMPOSE_FILE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_COMPOSE_FILE
+SERVICE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_SERVICE
+export PACKAGE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_PACKAGE
 echo "--- Running ${CMD} for ${PACKAGE} in ${IMAGE}"
 
 mkdir -p web-code-source && chmod a+w web-code-source
@@ -29,5 +31,5 @@ CMD
 
 cd web-code-source
 IMAGE=$IMAGE docker-compose \
-  -f projects/monorepo-tools/scripts/docker/docker-compose.yml \
-  run web-code-run bash -c "$CMD"
+  -f $COMPOSE_FILE \
+  run $SERVICE "$CMD"
