@@ -2,7 +2,7 @@
 
 ```
 steps:
-  - command: '<OPTIONAL COMMAND TO RUN IN SERVICE>'
+  - command: '<optional script to run in service>'
     plugins:
       - 'albertywu/run-docker-compose':
         compose-file: '<PATH TO DOCKER COMPOSE FILE>'
@@ -15,7 +15,7 @@ steps:
 
 ```
 steps:
-  - command: '<OPTIONAL COMMAND TO RUN IN SERVICE>'
+  - command: path/to/script.sh
     plugins:
       - 'albertywu/run-docker-compose':
         compose-file: 'projects/monorepo-tools/scripts/docker/docker-compose.yml'
