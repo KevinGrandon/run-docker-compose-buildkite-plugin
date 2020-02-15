@@ -30,7 +30,7 @@ echo "chown DONE"
 CMD
 
 # copy contents of web-code-source to the working directory
-cp -Rf web-code-source/ .
+cp -a web-code-source/* .
 
 if [ -z $SCRIPT ]
 then
