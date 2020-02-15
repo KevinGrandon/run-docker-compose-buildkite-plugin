@@ -29,7 +29,8 @@ chown -R $(id -u):$(id -g) /web-code-source
 echo "chown DONE"
 CMD
 
-cd web-code-source
+# copy contents of web-code-source to the working directory
+cp -Rf web-code-source/ .
 
 if [ -z $SCRIPT ]
 then
