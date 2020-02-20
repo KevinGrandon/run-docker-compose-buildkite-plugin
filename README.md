@@ -25,3 +25,20 @@ steps:
         package: 'projects/example-trips-viewer-fusion'
         service: 'web-code-run'
 ```
+
+# Additional Configuration
+
+### `verbose` (optional)
+
+Sets `docker-compose` to run with `--verbose`
+
+The default is `false`.
+
+```
+steps:
+  - command: path/to/script.sh
+    plugins:
+      - 'albertywu/run-docker-compose':
+        # Required properties
+        verbose: true
+```
