@@ -51,5 +51,5 @@ else
 fi
 
 # Try to spin down services
-docker-compose kill || true
-docker-compose down || true
+docker-compose kill -f $COMPOSE_FILE || true
+docker-compose down -f $COMPOSE_FILE || true
