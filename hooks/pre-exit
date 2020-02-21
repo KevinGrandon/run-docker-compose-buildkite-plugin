@@ -4,7 +4,9 @@ set -ex
 
 COMPOSE_FILE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_COMPOSE_FILE
 
-docker-compose -f $COMPOSE_FILE logs --tail="all"
+if [ "$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_LOGS" == "true" ]; then
+  docker-compose -f $COMPOSE_FILE logs --tail="all"
+fi
 
 # Try to spin down services
 docker-compose -f $COMPOSE_FILE kill || true

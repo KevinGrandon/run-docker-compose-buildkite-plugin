@@ -41,6 +41,19 @@ steps:
         build: true
 ```
 
+### `logs` (optional)
+
+Set to true to output docker-compose logs for running services.
+
+```
+steps:
+  - command: path/to/script.sh
+    plugins:
+      - 'albertywu/run-docker-compose':
+        # Required properties
+        logs: true
+```
+
 ### `verbose` (optional)
 
 Sets `docker-compose` to run with `--verbose`
