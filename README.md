@@ -28,6 +28,19 @@ steps:
 
 # Additional Configuration
 
+### `build` (optional)
+
+Will trigger a docker-compose build of the specified service.
+
+```
+steps:
+  - command: path/to/script.sh
+    plugins:
+      - 'albertywu/run-docker-compose':
+        # Required properties
+        build: true
+```
+
 ### `verbose` (optional)
 
 Sets `docker-compose` to run with `--verbose`
