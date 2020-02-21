@@ -2,4 +2,4 @@
 
 echo "[Run Docker Compose Plugin] - Skipping git checkout"
 
-git clean -ffxdq
+git clean -ffxdq || true

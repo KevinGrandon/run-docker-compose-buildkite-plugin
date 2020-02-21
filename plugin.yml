@@ -18,6 +18,8 @@ configuration:
       type: string
     verbose:
       type: boolean
+    logs:
+      type: boolean
   required:
     - image
     - package
