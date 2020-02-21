@@ -1,5 +1,4 @@
 #!/bin/bash
 
-echo "[Run Docker Compose Plugin] - Skipping git checkout"
-
+echo "~~~ :docker: docker-control checkout override" >&2
 git clean -ffxdq || true
