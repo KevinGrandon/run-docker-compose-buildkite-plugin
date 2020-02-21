@@ -49,7 +49,3 @@ then
 else
   IMAGE=$IMAGE docker-compose $VERBOSE -f $COMPOSE_FILE run $SERVICE bash $SCRIPT
 fi
-
-# Try to spin down services
-docker-compose kill -f $COMPOSE_FILE || true
-docker-compose down -f $COMPOSE_FILE || true

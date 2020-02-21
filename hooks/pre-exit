@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ex
+
+COMPOSE_FILE=$BUILDKITE_PLUGIN_RUN_DOCKER_COMPOSE_COMPOSE_FILE
+
+# Try to spin down services
+docker-compose kill -f $COMPOSE_FILE || true
+docker-compose down -f $COMPOSE_FILE || true
